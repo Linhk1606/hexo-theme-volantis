@@ -2,19 +2,19 @@
 style:
   cursor:
     enable: true
-    text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
-    pointer: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png
-    default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
-    not-allowed: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/circle.png
-    zoom-out: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-out.png
-    zoom-in: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-in.png
-    grab: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/openhand.png
-  font_smoothing: false # font-smoothing for webkit
+    text: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/text.cur
+    pointer: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/link.cur
+    default: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/pointer.cur
+    not-allowed: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/unavailiable.cur
+    zoom-out: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/alternate.cur
+    zoom-in: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/alternate.cur
+    grab: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.4/cursors/move.cur
+  font_smoothing: true # font-smoothing for webkit
   max_width: 1080px # Sum of body width and sidebar width (This limit will be exceeded when the device width is greater than 2000px, reaching 75% of the total width)
   scrollbar:
     size: 4px
     border: 2px
-    color: '#2196f3'
+    color: '#734ae6'
     hover: '#ff5722'
   navbar:
     height: 64px
@@ -27,7 +27,7 @@ style:
     highlight:
       language: true # show language of codeblock
       copy_btn: true
-      grayscale: false # Enable grayscale effect
+      grayscale: true # Enable grayscale effect
     text_align: # left, right, justify, center
       h1: left
       h2: left
@@ -36,10 +36,10 @@ style:
       p: justify
     note: # style for default note: {% note text %}
       icon: '\f054'
-      color: ''
+      color: '#2196f3'
     checkbox:
       enable: true # enable for user
-      color: '' # color for default checkbox
+      color: '#2196f3' # color for default checkbox
   gap:
     h2: 48px # Spacing above H2 (only px unit)
     h3: 24px # Spacing above H3 (only px unit)
@@ -73,18 +73,18 @@ style:
       weight: normal
       style: normal
     bodyfont:
-      fontfamily: 'UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      fontfamily: '"Varela Round", UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
       name: 'UbuntuMono'
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
       weight: normal
       style: normal
       offset: 0.1rem # Correct baseline for zh-CN
     codefont:
-      fontfamily: 'Menlo, UbuntuMono, Monaco'
-      # name: 'Monaco'
-      # url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
-      # weight: normal
-      # style: normal
+      fontfamily: 'Cascadia Code'
+      name: 'Cascadia Code'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/CascadiaCode/Cascadia.ttf
+      weight: normal
+      style: normal
   # color:
   #   site: '#21232F' # Website background color
   #   site_inner: '#fff' # Text color inside the website background
@@ -104,62 +104,113 @@ style:
 
 ############################### Layout ###############################
 cover:
-  scheme: docs # docs, blog
+  scheme: blog # docs, blog
   layout: dock # search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
     archive: true
-    others: false # can be written in front-matter 'cover: true'
-  logo: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: ''
-  subtitle: ''
-  search: A Wonderful Theme for Hexo # search bar placeholder
+    others: true # can be written in front-matter 'cover: true'
+  logo: https://blog.lhkstudio.me/assets/logooo.png
+  search: Type here to search # search bar placeholder
   features:
-    - name: 文档
-      img: https://i.loli.net/2020/07/24/GaeXvVAdtJkCYT3.png
-      icon: fas fa-book
-      url: /v3/getting-started/
-    - name: 帮助
-      img: https://i.loli.net/2020/07/24/cxRslyWzk2OTP9r.png
-      icon: fas fa-question-circle
-      url: faqs/
-    - name: 示例
-      img: https://i.loli.net/2020/07/24/9kHJZNA8m4RBxhp.png
-      icon: fas fa-play-circle
-      url: /examples/
-    - name: 社区
-      img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
-      icon: fas fa-fan fa-spin
-      url: /contributors/
-
+    - name: 首页
+      icon: fad fa-home
+      url: /
+      iconColor: '#20c997'
+    - name: 标签
+      icon: fad fa-hashtag
+      url: tags/
+      iconColor: '#2196f3'
+    - name: 时间轴
+      icon: fad fa-list
+      url: archives/
+      iconColor: '#E91E63'
+    - name: 关于我
+      icon: fad fa-user-circle
+      url: /about
+      iconColor: '#ff9800'
+    - name: 友链
+      icon: fad fa-link
+      url: /friends
+      iconColor: '#734ae6'
 
 
 # Navigation Bar
 navbar:
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    # img: https://i.loli.net/2020/07/22/Xw9pZTkyhSPOY8M.png
     icon:
-    title:
+    title: LHKSTUDIO
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
-    - name: 博客
-      icon: fas fa-rss
-      url: /
     - name: 分类
-      icon: fas fa-folder-open
+      icon: fal fa-folder-open
       url: categories/
+      iconColor: '#20c997'
     - name: 标签
-      icon: fas fa-tags
+      icon: fal fa-hashtag
       url: tags/
-    - name: 归档
-      icon: fas fa-archive
+      iconColor: '#2196f3'
+    - name: 时间轴
+      icon: fal fa-list
       url: archives/
+      iconColor: '#E91E63'
+    - name: 关于我
+      icon: fal fa-user-circle
+      url: /about
+      iconColor: '#ff9800'
     - name: 友链
-      icon: fas fa-link
-      url: friends/
-    - name: 关于
-      icon: fas fa-info-circle
-      url: about/
+      icon: fal fa-link
+      url: /friends
+      iconColor: '#2196f3'
+    - name: 管理员
+      icon: fal fa-shield
+      iconColor: '#9c27b0'
+      rows:
+        - name: 站点监视
+          icon: fal fa-telescope
+          url: https://status.lhkstudio.me
+        - name: 云端编辑
+          icon: fal fa-edit
+          url: https://www.yuque.com/linhk1606/hexo
+        - name: 博客源码
+          icon: fal fa-file-code
+          url: https://github.com/linhk1606/blog-source
+        - name: 腾讯云函数
+          icon: fal fa-brackets-curly
+          url: https://console.cloud.tencent.com/scf/list-detail?rid=1&ns=default&id=Hexo
+        - name: hr
+        - name: 时光鸡
+          icon: fal fa-clock
+          url: time-machine/
+    - name: 更多
+      icon: fal fa-ellipsis-v
+      iconColor: '#E91E63'
+      rows:
+        - name: 个人主页
+          icon: fal fa-caret-square-right
+          url: https://lhkstudio.me
+        - name: Follow Me
+          icon: fal fa-code-branch
+          url: https://github.com/Linhk1606
+        - name: hr
+        - name: 小工具
+          icon: fal fa-tools
+          rows:
+            - name: 肺炎疫情图
+              icon: fal fa-biohazard
+              url: 2019-nCoV/
+            - name: RSS订阅
+              icon: fal fa-rss
+              url: /atom.xml
+            - name: 站点地图
+              icon: fal fa-sitemap
+              url: /sitemap.xml
+            - name: 3D元素周期表
+              icon: fal fa-flask
+              url: /Periodic-table
+        - name: 来点音乐
+          icon: fal fa-compact-disc
   search: Search...   # Search bar placeholder
 
 
@@ -169,11 +220,11 @@ layout:
   # 文章列表（主页、自定义的列表）布局
   on_list:
     # 列表中每一篇文章的meta信息
-    meta: [title, author, category, date, wordcount, counter, valinecount, pin]
+    meta: [title, category, date, pin]
     # 列表类页面的侧边栏
-    sidebar: [blogger, category, tagcloud, qrcode]
+    sidebar: [blogger, note, webinfo, category, tagcloud]
     # read more button
-    readmore: 阅读全文 <i class="fas fa-chevron-right"></i>
+    readmore: Read More <i class="fad fa-chevron-right"></i>
   # 页面布局
   on_page:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
@@ -182,14 +233,14 @@ layout:
     # 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
     # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
     meta:
-      header: [title, author, category, date, pin]
+      header: [title, author, category, date, wordcount, pin]
       footer: [updated, tags, btns, share]
     # 文章页面的侧边栏
-    sidebar: [qrcode, toc]
+    sidebar: [toc]
   # 文章布局，参数继承自 on_page
   on_post:
     # 文章页脚，自动在每一篇文章末尾添加
-    article_footer: [references, related_repos, copyright, donate]
+    article_footer: [references, related_repos, copyright]
   # 其他的页面布局暂时等于 on_list
 
 
@@ -199,39 +250,39 @@ meta:
   title: # 暂无配置
   # 默认文章作者（可在front-matter中覆盖）
   author:
-    avatar:
-    name: 请设置文章作者
-    url: /
+    avatar: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.1/img/avatar.webp
+    name: Lin
+    url: https://lhkstudio.me
   # 文章创建日期
   date:
-    icon: fas fa-calendar-alt
-    title: '发布于：'
+    icon: fal fa-calendar-alt
+    title: ''
     format: 'll' # 日期格式 http://momentjs.com/docs/
   # 文章更新日期
   updated:
-    icon: fas fa-edit
-    title: '更新于：'
+    icon: fal fa-edit
+    title: '更新于: '
     format: 'll' # 日期格式 http://momentjs.com/docs/
   # 文章分类
   category:
-    icon: fas fa-folder-open
+    icon: fal fa-folder-open
   # 文章置顶
   pin:
-    icon: fas fa-angle-double-up
+    icon: fal fa-angle-double-up
   # 文章浏览计数
   counter:
-    icon: fas fa-eye
+    icon: fal fa-eye
   # 文章评论数量：只支持 valine
   valinecount:
-    icon: fas fa-comment-dots
+    icon: fal fa-comment-dots
     desc: '' # 条评论
   # 文章字数和阅读时长
   wordcount:
-    icon_wordcount: fas fa-keyboard
-    icon_duration: fas fa-hourglass-half
+    icon_wordcount: fal fa-keyboard
+    icon_duration: fal fa-hourglass-half
   # 文章标签
   tags:
-    icon: fas fa-hashtag
+    icon: fal fa-hashtag
   # 分享
   share:
     - id: qq
@@ -240,10 +291,10 @@ meta:
       img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png
     - id: weibo
       img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png
-    # - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
-    #   img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png
-    # - id: telegram
-    #   img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png
+    - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
+      img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png
+    - id: telegram
+      img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png
   # 链接
   btns:
     edit:
@@ -283,12 +334,12 @@ widget:
   blogger:
     class: blogger
     display: [desktop, mobile] # [desktop, mobile]
-    avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    shape: rectangle # circle, rectangle
+    avatar: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.1/img/avatar.webp
+    shape: circle # circle, rectangle
     url: /about/
-    title:
-    subtitle:
-    jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+    title: Linhk1606
+    subtitle: <i class="fas fa-map-marker-alt"></i> FJ, China
+    jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
     social: true
   # ---------------------------------------
   # toc widget (valid only in articles)
@@ -296,7 +347,7 @@ widget:
     class: toc
     display: [desktop, mobile] # [desktop, mobile]
     header:
-      icon: fas fa-list
+      icon: fal fa-list
       title: 本文目录
     list_number: false
     min_depth: 2
@@ -307,18 +358,18 @@ widget:
     class: category
     display: [desktop] # [desktop, mobile]
     header:
-      icon: fas fa-folder-open
+      icon: fal fa-folder-open
       title: 文章分类
-      url: /blog/categories/
+      url: categories/
   # ---------------------------------------
   # tagcloud widget
   tagcloud:
     class: tagcloud
     display: [desktop, mobile] # [desktop, mobile]
     header:
-      icon: fas fa-tags
+      icon: fal fa-tags
       title: 热门标签
-      url: /blog/tags/
+      url: tags/
     min_font: 14
     max_font: 24
     color: true
@@ -373,7 +424,7 @@ widget:
     class: webinfo
     display: [desktop]
     header:
-      icon: fas fa-award
+      icon: fal fa-chart-line
       title: 站点信息
     type:
       article:
@@ -382,7 +433,7 @@ widget:
         unit: '篇'
       runtime:
         enable: true
-        data: '2020/01/01'    # 填写建站日期
+        data: '2019/11/1'    # 填写建站日期
         text: '已运行时间：'
         unit: '天'
       wordcount:
@@ -390,11 +441,11 @@ widget:
         text: '本站总字数：'   # 需要启用 wordcount
         unit: '字'
       siteuv:
-        enable: true
+        enable: false
         text: '本站访客数：'   # 需要启用 busuanzi
         unit: '人'
       sitepv:
-        enable: true
+        enable: false
         text: '本站总访问量：' # 需要启用 busuanzi
         unit: '次'
       lastupd:
@@ -402,7 +453,17 @@ widget:
         friendlyShow: true    # 更友好的时间显示
         text: '最后活动时间：'
         unit: '日'
-
+  # ---------------------------------------
+  # note widget
+  note:
+    class: text
+    display: [desktop] # [desktop, mobile]
+    header:
+      icon: fal fa-edit
+      title: 建站小记
+    content:
+      - '**2020/8/1** 默默更新, 增加了功能强大的右键, 发现 Pjax 还是有点小bug'
+      - '**2020/7/27** 升级至 `Volantis v3.0 beta` 完成, 开启 Pjax 无跳转刷新'
   # You can add your own widget here or 'blog/source/_data/widget.yml'
   # class: text, list, grid, qrcode, page, ... see more at https://volantis.js.org/
 
@@ -410,17 +471,19 @@ widget:
 
 footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, info, copyright]
+  layout: [social, info, copyright]
   social:
-    - icon: fas fa-rss
-      url: atom.xml
-    - icon: fas fa-envelope
-      url: mailto:me@xxx.com
-    - icon: fab fa-github
-      url: https://github.com/xaoxuu
-    - icon: fas fa-headphones-alt
-      url: https://music.163.com/#/user/home?id=63035382
-  copyright: '[Copyright © 2017-2020 XXX](/)'
+    - icon: fal fa-rss
+      url: /atom.xml
+    - icon: fal fa-envelope
+      url: mailto:lhkstudio2020@gmail.com
+    - icon: fal fa-code-branch
+      url: https://github.com/Linhk1606
+    - icon: fal fa-headphones-alt
+      url: https://music.163.com/#/user/home?id=2113078436
+    - icon: fab fa-zhihu
+      url: https://www.zhihu.com/people/linhk1606
+  copyright: 'Copyright © 2019-2020'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
@@ -448,14 +511,14 @@ plugins:
 
   ######## Plugins to optimize the experience:
   # highlight.js
-  highlightjs:
-    js: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js
-    css: https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css
+  # highlightjs:
+  #   js: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js
+  #   css: https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css
     # more: https://www.jsdelivr.com/package/npm/highlight.js?path=styles
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
-    # js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
+    js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
     distance: 32px
     duration: 800 # ms
     interval: 20 # ms
@@ -466,10 +529,10 @@ plugins:
 
   ######## Plugins for SEO:
   # Traffic statistics (very slow loading)
-  busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  # busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
 
   # npm i --save hexo-wordcount
-  wordcount: #true
+  wordcount: true
 
   ######## Plugins for ...
   # Button Ripple Effect
@@ -494,7 +557,7 @@ plugins:
       # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg
       # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/35F12181-F0E9-45BD-B134-37E4B4A660CF.jpeg
       # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg
+      - https://cdn.jsdelivr.net/gh/Linhk1606/md-wallpaper@0.0.1/vector_landscape_1.svg
       # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg
       # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/landscape/AEB33F9D-7294-4CF1-B8C5-3020748A9D45.jpeg
       # - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/2884F904-F1F3-479E-AE27-5EBC291B63B0.jpeg
@@ -513,12 +576,12 @@ plugins:
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
-    id: 3175833810    # song id / playlist id / album id / search keyword
+    id: 3194206062    # song id / playlist id / album id / search keyword
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
     autoplay: false   # audio autoplay
-    order: list       # player play order, values: 'list', 'random'
+    order: random       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 340px # list max height
@@ -529,24 +592,26 @@ plugins:
     cacheBust: false     # When set to true, Pjax appends a timestamp  to skip the browser cache.
     animation: nprogress # nprogress, circle
     banUrl:              # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
-      # - '/about/index.html'
+      - '/time-machine/index.html'
+      - '/time-machine/'
+      - '/time-machine'
 
   # Artitalk https://artitalk.js.org
   # 配置过程请参考：https://artitalk.js.org/doc.html
   # 除appID和appKEY外均为选填项
   Artitalk:
-    enable: false # true为开启，false为关闭
-    appID: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
-    appKEY: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
+    enable: true # true为开启，false为关闭
+    appID: tIOCOkWhENwNnhYNcbh4Ds38-MdYXbMMI # your appID
+    appKEY: 9yaUKqQc9oKDFSIv6fi9u6G6 # your appKEY
     # severurl:  #leancloud绑定的安全域名，使用国际版的话不需要填写
     # slanguage: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
-    # per: #每页说说的显示数量
+    per: 5 #每页说说的显示数量
     # placeholder1: #在编辑说说的输入框中的占位符
     # placeholder2: #自定义头像url的输入框的占位符
     # lazy: #加载动画的开关，1为开，0为关，默认为开
     # bgimg: #说说输入框背景图片url
-    # color1: #说说背景颜色1&按钮颜色1
-    # color2: #说说背景颜色2&按钮颜色2
+    color1: '#90CAF9' #说说背景颜色1&按钮颜色1
+    color2: '#2196F3' #说说背景颜色2&按钮颜色2
     # color3: #说说字体颜色
   ##################################
   # 暗黑模式 darkmodejs
@@ -571,9 +636,9 @@ plugins:
 
 ############################### Comments ###############################
 comments:
-  title: <i class='fas fa-comments'></i> 评论
+  title: <i class='fal fa-comments'></i> 评论
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover
+  service: gitalk # valine, minivaline, disqus, gitalk, vssue, livere, isso, hashover
   # Valine
   # https://valine.js.org/
   valine: # 请将 appId appKey 修改为自己的，否则评论数据是共享的。
@@ -646,11 +711,11 @@ comments:
   # Gitalk
   # https://gitalk.github.io/
   gitalk:
-    clientID:
-    clientSecret:
-    repo:
-    owner:
-    admin: # []
+    clientID: b63e285f3442871f2b05
+    clientSecret: 88a93465b758e9eb10c68aa80c199c83b13c2a80
+    repo: blog-source
+    owner: Linhk1606
+    admin: Linhk1606 # []
   # Vssue
   # https://vssue.js.org/zh/
   vssue:
@@ -676,34 +741,35 @@ comments:
 rightmenu:
   enable: true
   # hr: 分割线, navigation: 导航按钮
-  layout: [copy, navigation, hr, home, help, examples, contributors, hr, source_docs, source_theme, hr, music-ctrl, music-volume]
+  layout: [navigation, copy, hr, home, tag, category, about, friend, hr, music-ctrl, music-volume]
   # 复制
   copy:
     name: 复制文本
-    icon: fa fa-copy
+    icon: fal fa-copy
     id: menu-copy
     onclick: menuCopy()
   # 自定义菜单的格式如下
-  help:
-    name: 常见问题
-    icon: fa fa-question
-    url: https://volantis.js.org/faqs/
-  examples:
-    name: 示例博客
-    icon: fa fa-rss
-    url: https://volantis.js.org/examples/
-  contributors:
-    name: 加入社区
-    icon: fa fa-fan fa-spin
-    url: https://volantis.js.org/contributors/
-  source_docs:
-    name: 本站源码
-    icon: fa fa-code-branch
-    url: https://github.com/volantis-x/volantis-docs/
-  source_theme:
-    name: 主题源码
-    icon: fa fa-code-branch
-    url: https://github.com/volantis-x/hexo-theme-volantis/
+  home:
+    name: 返回首页
+    icon: fal fa-home
+    url: /
+  tag:
+    name: 前往标签页
+    icon: fal fa-hashtag
+    url: /tags
+  category:
+    name: 前往分类页
+    icon: fal fa-folder-open
+    url: /categories
+  about:
+    name: 关于我和本站
+    icon: fal fa-user-circle
+    url: /about
+  friend:
+    name: 查看我的朋友
+    icon: fal fa-users
+    url: /friends
+
 
 
 ############################### Search ###############################
@@ -711,15 +777,15 @@ rightmenu:
 # npm i -S hexo-generator-search hexo-generator-json-content
 search:
   enable: true
-  service: hexo  # hexo, google, algolia, azure, baidu
-  # js: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3.0/js/search.js
+  service: algolia  # hexo, google, algolia, azure, baidu
+  js: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.0.5/js/search.js
   google:
     apiKey:
     engineId:
   algolia:
-    applicationID:
-    apiKey:
-    indexName:
+    applicationID: QE7LMUJ22V
+    apiKey: 3e9460bbaac6905c7e1eda81762b52f2
+    indexName: newSearch
   azure:
     serviceName:
     indexName:

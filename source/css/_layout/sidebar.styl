@@ -53,7 +53,7 @@
     border-top-left-radius: $border-card
     border-top-right-radius: $border-card
     padding: "calc(%s - 2px)" % $gap
-    font-weight: bold
+    // font-weight: bold
     padding-bottom: 0
     &,a
       color: $color-theme
@@ -152,17 +152,34 @@
             transform: translate(-50%, -50%)
             position: absolute
       .text
-        :first-child
-          margin-top: $gap
+        // :first-child
+        //   margin-top: $gap
       h2
-        font-weight: bold
+        font-weight: 500
+        font-size: 1.1rem
         margin: $gap * 0.5
         @media screen and (max-width: $device-tablet)
           margin: $gap * 0.5
       p
-        font-weight: bold
+        font-weight: 500
         margin: $gap * 0.5 $gap * 0.5 0 $gap * 0.5
         empty-cells: hide
+        color: #7a7a7a
+      .card-info-data 
+        display table
+        padding .7rem 0
+        width 100%
+        table-layout fixed
+        & > .card-info-data-item 
+          display table-cell
+          a 
+            .headline 
+              color #4c4948
+              font-size .7rem
+            .length_num 
+              margin-top -.3rem
+              color #000
+              font-size 1rem
       .social-wrapper
         display: flex
         justify-content: space-between
@@ -223,7 +240,7 @@
       padding: $gap * 0.5 0
       a
         font-size: $fontsize-meta
-        font-weight: bold
+        font-weight: normal
         line-height: 1.5
         padding-top: 6px
         padding-bottom: 6px
@@ -378,3 +395,6 @@
       &:last-child
         display inline-block
         float right
+        font-weight normal
+        font-size 0.875rem
+        color rgba(68,68,68,0.7)
