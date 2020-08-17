@@ -85,8 +85,12 @@ style:
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/CascadiaCode/Cascadia.ttf
       weight: normal
       style: normal
-    note-tag:
-      fontfamily: 'Font Awesome 5 Pro'
+    iconfont:
+      fontfamily: 'Font Awesome 5 Pro Solid'
+      name: 'Font Awesome 5 Pro Solid'
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fontawesome-pro@master/webfonts/fa-solid-900.ttf 
+      weight: normal
+      style: normal
   # color:
   #   site: '#21232F' # Website background color
   #   site_inner: '#fff' # Text color inside the website background
@@ -518,7 +522,7 @@ plugins:
   ################ optional plugins ################
 
   # fontawesome
-  fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css
+  fontawesome: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fontawesome-pro@master/css/all.min.css
   # fontawesome animation
   fontawesome_animation: https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css
   # fancybox
