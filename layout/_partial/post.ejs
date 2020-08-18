@@ -2,8 +2,19 @@
   <% if (post.photoo) { %>
   <div class="post_cover">
     <a href="<%= url_for(post.link || post.path) %>" title="<%= post.title %>">
-      <img class="post_bg loaded" onerror="this.onerror=null;this.src='https:\/\/jerryc.me\/img\/404.jpg'"
-        alt="<%= post.title %>" data-ll-status="loaded" src="<%= post.photourl %>">
+      
+      <% if (config.lazyload && config.lazyload.enable) { %>
+        <% if (config.lazyload.loadingImg) { %>
+          <img class="post_bg lazyload placeholder" onerror="this.onerror=null;this.src='https:\/\/jerryc.me\/img\/404.jpg'"
+            alt="<%= post.title %>" src="<%= post.photourl %>">
+        <% } else { %>
+          <img class="post_bg lazyload" onerror="this.onerror=null;this.src='https:\/\/jerryc.me\/img\/404.jpg'"
+            alt="<%= post.title %>" src="<%= post.photourl %>">
+        <% } %>
+      <% } else { %>
+        <img class="post_bg" onerror="this.onerror=null;this.src='https:\/\/jerryc.me\/img\/404.jpg'"
+          alt="<%= post.title %>" src="<%= post.photourl %>">
+      <% } %>
     </a>
   </div>
   <% } %>
