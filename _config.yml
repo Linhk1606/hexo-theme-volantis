@@ -14,8 +14,6 @@ style:
   scrollbar:
     size: 4px
     border: 2px
-    color: '#734ae6'
-    hover: '#ff5722'
   navbar:
     height: 64px
     width: auto # auto, max
@@ -141,6 +139,7 @@ cover:
 
 # Navigation Bar
 navbar:
+  visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
     # img: https://i.loli.net/2020/07/22/Xw9pZTkyhSPOY8M.png
     icon:
@@ -210,6 +209,37 @@ navbar:
         - name: 来点音乐
           icon: fal fa-compact-disc
   search: Search...   # Search bar placeholder
+
+
+
+
+############################### Layout ###############################
+cover:
+  scheme: blog # docs, blog
+  layout: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  display:
+    home: true
+    archive: true
+    others: false # can be written in front-matter 'cover: true'
+  background:
+  logo: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
+  title: ''
+  subtitle: ''
+  search: A Wonderful Theme for Hexo # search bar placeholder
+  features:
+    - name: 文档
+      icon: fas fa-book
+      url: /v3/getting-started/
+    - name: 帮助
+      icon: fas fa-question-circle
+      url: faqs/
+    - name: 示例
+      icon: fas fa-play-circle
+      url: /examples/
+    - name: 社区
+      icon: fas fa-fan fa-spin
+      url: /contributors/
+
 
 
 
@@ -493,6 +523,9 @@ footer:
     - icon: fal fa-question-circle
       url: https://www.zhihu.com/people/linhk1606
   copyright: 'Made with <i class="fas fa-heart faa-pulse animated fa-fw"></i> by [VolantisX](https://github.com/volantis-x)'
+  analytics:
+    <span id="lc-sv">本站总访问量为 <span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
+    <span id="lc-uv">访客数为 <span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
@@ -552,8 +585,6 @@ plugins:
   clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
 
   ######## Plugins for SEO:
-  # Traffic statistics (very slow loading)
-  # busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
 
   # npm i --save hexo-wordcount
   wordcount: true
@@ -607,7 +638,6 @@ plugins:
     js:
       - https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js
       - https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
-      - js/aplayer.js
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
@@ -830,7 +860,12 @@ search:
   baidu:
     apiId:
 
-
+analytics:
+  busuanzi: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  leancloud:
+    app_id: XOozn7rRukL6RdvuG5C9kowy-MdYXbMMI
+    app_key: Fw2VrxbRHeIEuuNm2Xu4zkz1
+    server_url:
 
 ############################### Theme Information ###############################
 info:

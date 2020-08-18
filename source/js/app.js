@@ -6,7 +6,7 @@ var customSearch;
 
 	// 校正页面定位（被导航栏挡住的区域）
 	var scrollCorrection = 80; // (header height = 64px) + (gap = 16px)
-	var $headerAnchor = $('.l_header', '.cover-wrapper');
+	var $headerAnchor = $('.l_header');
 	if ($headerAnchor[0]) {
 		scrollCorrection = $headerAnchor[0].clientHeight + 16;
 	}
@@ -14,7 +14,7 @@ var customSearch;
 	// 尝试： 重设数据值
 	function restData() {
 		scrollCorrection = 80;
-		$headerAnchor = $('.l_header', '.cover-wrapper');
+		$headerAnchor = $('.l_header');
 		if ($headerAnchor[0]) {
 			scrollCorrection = $headerAnchor[0].clientHeight + 16;
 		}
@@ -33,7 +33,7 @@ var customSearch;
 		const $postsBtn = $('.menu .active');            // 一级导航上的当前激活的按钮
 		const $topBtn = $('.s-top');                     // 向上
 		const $titleBtn = $('h1.title', '#header-meta'); // 文章内标题
-		const $bodyAnchor = $('.l_body');                // 页面主体
+		const $bodyAnchor = $('.safearea');                // 页面主体
 
 		if ($postsBtn.length && $bodyAnchor) {
 			$postsBtn.click(e => {
@@ -72,22 +72,22 @@ var customSearch;
 		var showHeaderPoint = 0;
 		if ($coverAnchor[0]) {
 			if(enableCover == "true" && $('.cover.half').css('display') !== 'none') // Pjax 处理
-				showHeaderPoint = $coverAnchor[0].clientHeight - 180;
+				showHeaderPoint = $coverAnchor[0].clientHeight - 240;
 		}
 
 		var pos = document.body.scrollTop;
 		if(enableCover == "true" && $('.cover.half').css('display') === 'none')
-			pos += 180; // Pjax 处理
+			pos += 240; // Pjax 处理
 
 		$(document, window).scroll(() => {
 			let scrollTop = $(window).scrollTop();  // 滚动条距离顶部的距离
 
 			if(enableCover == "true" && $('.cover.half').css('display') === 'none')
-				scrollTop += 180; // Pjax 处理
+				scrollTop += 240; // Pjax 处理
 
 			const del = scrollTop - pos;
 			pos = scrollTop;
-			if (scrollTop > 180) {
+			if (scrollTop > 240) {
 				$topBtn.addClass('show');
 				if (del > 0) {
 					$topBtn.removeClass('hl');
@@ -413,7 +413,7 @@ var customSearch;
 
 		// 全屏封面底部箭头
 		$('.scroll-down').on('click', function () {
-			scrolltoElement('.l_body');
+			scrolltoElement('.safearea');
 		});
 
 
