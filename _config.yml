@@ -84,11 +84,7 @@ style:
       weight: normal
       style: normal
     iconfont:
-      fontfamily: 'Font Awesome 5 Pro Solid'
-      name: 'Font Awesome 5 Pro Solid'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fontawesome-pro@master/webfonts/fa-solid-900.ttf 
-      weight: normal
-      style: normal
+      fontfamily: 'Font Awesome 5 Pro'
   # color:
   #   site: '#21232F' # Website background color
   #   site_inner: '#fff' # Text color inside the website background
@@ -107,35 +103,6 @@ style:
 
 
 ############################### Layout ###############################
-cover:
-  scheme: blog # docs, blog
-  layout: dock # search (搜索), dock (坞), featured (精选), focus (焦点)
-  display:
-    home: true
-    archive: true
-    others: true # can be written in front-matter 'cover: true'
-  logo: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.5/img/lhk-logo.png
-  search: Type here to search # search bar placeholder
-  features:
-    - name: 首页
-      img: /assets/file-manager.svg
-      url: /
-    - name: 归档
-      img: /assets/irix.svg
-      url: archives/
-    - name: 关于&留言
-      img: /assets/notification.svg
-      url: /about
-    - name: 友链
-      img: /assets/cs-user.svg
-      url: /friends
-    - name: 个人主页
-      img: /assets/web-browser.svg
-      url: https://www.lhkstudio.me
-    - name: GitHub
-      img: /assets/github-desktop.svg
-      url: https://github.com/Linhk1606
-
 
 # Navigation Bar
 navbar:
@@ -214,35 +181,47 @@ navbar:
 
 
 ############################### Layout ###############################
+
 cover:
-  scheme: blog # docs, blog
-  layout: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  scheme: docs # docs, blog
+  layout: dock  # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
-    archive: true
+    archive: false
     others: false # can be written in front-matter 'cover: true'
   background:
-  logo: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: ''
-  subtitle: ''
-  search: A Wonderful Theme for Hexo # search bar placeholder
+  logo: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.5/img/lhk-logo.png
+  search: Type here to search # search bar placeholder
   features:
-    - name: 文档
-      icon: fas fa-book
-      url: /v3/getting-started/
-    - name: 帮助
-      icon: fas fa-question-circle
-      url: faqs/
-    - name: 示例
-      icon: fas fa-play-circle
-      url: /examples/
-    - name: 社区
-      icon: fas fa-fan fa-spin
-      url: /contributors/
+    - name: Finder
+      img: /assets/file-manager.svg
+      url: /
+    - name: Archive
+      img: /assets/irix.svg
+      url: archives/
+    - name: Message
+      img: /assets/notification.svg
+      url: /about
+    - name: Links
+      img: /assets/cs-user.svg
+      url: /friends
+    - name: Homepage
+      img: /assets/web-browser.svg
+      url: https://www.lhkstudio.me
+    - name: GitHub
+      img: /assets/github-desktop.svg
+      url: https://github.com/Linhk1606
+
+# 文章布局
+article:
+  # 文章列表页面的文章卡片布局方案
+  preview:
+    scheme: landscape # landscape
+    auto_excerpt: false # 0, 200, 500
+  # 文章详情页面的文章卡片本体布局方案
 
 
-
-
+# 不久后将被其它设置替代
 layout:
   # The following can be written in `blog/source/_data/layout.yml`
   # 文章列表（主页、自定义的列表）布局
@@ -375,7 +354,7 @@ widget:
     class: toc
     display: [desktop, mobile] # [desktop, mobile]
     header:
-      icon: fal fa-list
+      icon: fad fa-list
       title: 本文目录
     list_number: false
     min_depth: 2
@@ -386,7 +365,7 @@ widget:
     class: category
     display: [desktop] # [desktop, mobile]
     header:
-      icon: fal fa-folder-open
+      icon: fad fa-folder-open
       title: 文章分类
       url: categories/
   # ---------------------------------------
@@ -395,7 +374,7 @@ widget:
     class: tagcloud
     display: [desktop] # [desktop, mobile]
     header:
-      icon: fal fa-tags
+      icon: fad fa-tags
       title: 热门标签
       url: tags/
     min_font: 14
@@ -452,7 +431,7 @@ widget:
     class: webinfo
     display: [desktop]
     header:
-      icon: fal fa-chart-line
+      icon: fad fa-chart-line
       title: 站点信息
     type:
       article:
@@ -487,11 +466,12 @@ widget:
     class: text
     display: [desktop] # [desktop, mobile]
     header:
-      icon: fal fa-edit
+      icon: fad fa-edit
       title: 建站小记
     content:
+      - '**2020/8/19** 更新，一个勉勉强强可以用的暗黑模式，以及。。。为啥我没有lazyload效果'
       - '**2020/8/4** 微调更新'
-      - '**2020/8/1** 默默更新, 增加了功能强大的右键, 发现 Pjax 还是有点小bug'
+      - '**2020/8/1** 默默更新, 增加了功能强大的右键'
       - '**2020/7/27** 升级至 `Volantis v3.0 beta` 完成, 开启 Pjax 无跳转刷新'
   # ---------------------------------------
   # warn widget
@@ -499,8 +479,8 @@ widget:
     class: text
     display: [desktop, mobile] # [desktop, mobile]
     header:
-      icon: fal fa-siren-on faa-flash animated
-      title: FBI WARNING
+      icon: fad fa-siren-on faa-flash animated
+      title: 不温馨的提示
     content:
       - '本站默认替换了右键菜单，唤醒原系统菜单： <kbd>Ctrl</kbd> + <kbd>右键</kbd> ~'
   # You can add your own widget here or 'blog/source/_data/widget.yml'
@@ -510,7 +490,7 @@ widget:
 
 footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [social, copyright]
+  layout: [social, analytics, copyright]
   social:
     - icon: fal fa-rss
       url: /atom.xml
@@ -682,18 +662,18 @@ plugins:
   # https://darkmodejs.learn.uno
   # 暗黑模式样式：https://github.com/volantis-x/hexo-theme-volantis/blob/master/source/css/_third-party/darkmode.styl
   darkmodejs:
-    enable: false
+    enable: true
     js: https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js
     bottom: 32px
     right: unset
     left: 16px
-    time: 0s
+    time: .5s
     mixColor: '#f4f4f4'
     backgroundColor: '#f4f4f4'
-    buttonColorDark: '#100f2c'
+    buttonColorDark: '#181c27'
     buttonColorLight: '#f4f4f4'
     saveInCookies: true
-    label: 🌓
+    label: 🌙
     autoMatchOsTheme: true
 
 
@@ -805,7 +785,7 @@ comments:
 rightmenu:
   enable: true
   # hr: 分割线, music: 音乐控制器
-  layout: [copy_text, copy_src, navigation, hr, tag, category, about, friend, hr, code, hr, music]
+  layout: [copy_text, copy_src, navigation, tag, category, about, friend, hr, code, hr, music]
   # 可选功能项
   print:
     name: 打印页面
@@ -876,3 +856,10 @@ info:
   cdn:
     js:
     css:
+
+# Lazyload
+lazyload:
+  enable: true
+  onlypost: false
+  # loadingImg: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
+  isSPA: true

@@ -1,6 +1,6 @@
 .safearea
   margin: $gap
-  @media screen and (max-width: $device-mobile-l)
+  @media screen and (max-width: $device-mobile-m)
     margin: $gap 0 0
 .l_body
   position: relative
@@ -127,11 +127,9 @@
     margin-bottom: $gap
     padding: 1.5 * $gap
     border-radius: $border-card
-    @media screen and (max-width: $device-mobile-l)
+    @media screen and (max-width: $device-mobile-m)
       border-radius: 0
       margin-bottom: 0
-    &#cover
-      padding: 0
     h1
       font-weight: normal
       font-size: $fontsize-h1
@@ -145,11 +143,11 @@
       &#footer-meta
         margin-top: 2 * $gap
         margin-bottom: 0.5 * $gap
-      .post-img
+      .headimg
         width: "calc(100% + 3 * %s)" % $gap
         margin-left: 0 - 1.5 * $gap
         margin-top: 0 - 1.5 * $gap
-        margin-bottom: 1 * $gap
+        margin-bottom: 1.5 * $gap
         height: 280px
         background-position: center
         background-size: cover
@@ -200,35 +198,11 @@
           &.h2
             font-size: $fontsize-h2 * 1.1
         a
-          position: relative
-          padding: .7rem 0rem
+          display: inline
           font-weight: normal
           color: $color-text
-          text-decoration: none
-          &:before, &:after
-            content: ''
-            position: absolute
-            width: 10px
-            height: 10px
-            opacity: 0
-            border: 2px solid
-            transition: .3s
-            transition-timing-function: cubic-bezier(.17,.67,.05,1.29)
-          &:before
-            top: 0
-            left: -1.2rem
-            border-width: 2px 0 0 2px
-            transform: translate3d(10px,10px,0)
-          &:after
-            right: -1.2rem
-            bottom: 0
-            border-width: 0 2px 2px 0
-            transform: translate3d(-10px,-10px,0)
           &:hover
             color: $color-hover
-            &:before, &:after
-              opacity: 1
-              transform: translate3d(0,0,0)
 
       .new-meta-box
         trans(.1s)
@@ -436,15 +410,8 @@ if hexo-config('plugins.scrollreveal.js')
 img
   max-width 100%
   &.lazyload:not(.placeholder)
-<<<<<<< HEAD
-    transition filter 1s ease-out 0s
+    transition opacity .5s ease-out 0s
     &:not(.loaded)
-      filter blur(8px)
-    
-=======
-    transition filter .25s ease-out 0s
-    &:not(.loaded)
-      filter blur(8px)
+      opacity: 0
     &.loaded
-      filter none
->>>>>>> 654f2efab434cb61eb493d395892e71bc0b78670
+      opacity: 1
