@@ -100,11 +100,6 @@ style:
 
 
 # 图片懒加载，请复制到站点配置文件中使用。
-lazyload:
-  enable: true
-  onlypost: false
-  loadingImg: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
-  blurIn: true # 模糊加载效果 （loadingImg为空时有效）
 
 
 
@@ -193,9 +188,9 @@ cover:
   scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
-    archive: false
-    others: false # can be written in front-matter 'cover: true'
-  background:
+    archive: true
+    others: true # can be written in front-matter 'cover: true'
+  background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist@1.0.0/2020/005.jpg
   logo: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@0.0.7.5/img/lhk-logo.png
   search: Type here to search # search bar placeholder
   features:
@@ -601,14 +596,15 @@ plugins:
 
   # Slide Background
   backstretch:
-    enable: # true
+    enable: false
     js: https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js
-    position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
+    position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - https://cdn.jsdelivr.net/gh/Linhk1606/md-wallpaper@0.0.1/train_travel_illustration-wallpaper-1920x1080.jpg
+      - https://gitee.com/wallpapers/minimalist/blob/master/2020/032.jpg
+      # - https://cdn.jsdelivr.net/gh/Linhk1606/md-wallpaper@0.0.1/train_travel_illustration-wallpaper-1920x1080.jpg
       # - https://gitee.com/wallpapers/minimalist/raw/master/2020/001.jpg
       # - https://gitee.com/wallpapers/minimalist/raw/master/2020/002.jpg
       # - https://gitee.com/wallpapers/minimalist/raw/master/2020/003.jpg
@@ -694,7 +690,7 @@ plugins:
     buttonColorDark: '#181c27'
     buttonColorLight: '#f4f4f4'
     saveInCookies: true
-    label: 🌙
+    label: 
     autoMatchOsTheme: true
 
 
